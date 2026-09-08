@@ -1,5 +1,5 @@
 # ══════════════════════════════════════════════════════════════════════════════
-# Parlement — unified image (dev + production)
+# Ministry of Foreign Affairs Website — unified image (dev + production)
 # A single image that supports every role. The entrypoint.sh switches behaviour
 # based on NODE_ENV (development: Next.js dev + Air hot-reload; production:
 # static frontend via http-server + compiled Go binary).
@@ -44,7 +44,7 @@ COPY apps/package.json ./apps/
 RUN mkdir -p apps/next/fond/google && \
     printf 'module.exports = {};\n' > apps/next/fond/google/index.js && \
     printf '{"name":"google","version":"0.0.0"}\n' > apps/next/fond/google/package.json && \
-    pnpm install --filter @parlement-gouv/apps... --no-frozen-lockfile
+    pnpm install --filter @diplomatie/apps... --no-frozen-lockfile
 
 COPY apps/ ./apps/
 

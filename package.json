@@ -1,7 +1,7 @@
 {
-  "name": "parlement-gouv",
+  "name": "diplomatie-gouv",
   "version": "1.0.0",
-  "description": "Official Parliament of the Republic of Astoria — legislation, parliamentary proceedings, and citizen participation.",
+  "description": "Official Ministry of Foreign Affairs of the Republic of Astoria — legislation, parliamentary proceedings, and citizen participation.",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -68,7 +68,7 @@
   "packageManager": "pnpm@8.15.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codegouvaor/parlement.git"
+    "url": "https://github.com/codegouvaor/diplomatie.git"
   },
   "keywords": [
     "news",
@@ -80,14 +80,14 @@
   ],
   "author": {
     "name": "Astoria Government Development Team",
-    "email": "developer@parlement.gouv.aor",
-    "url": "https://parlement.gouv.aor"
+    "email": "developer@diplomatie.gouv.aor",
+    "url": "https://diplomatie.gouv.aor"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codegouvaor/parlement/issues"
+    "url": "https://github.com/codegouvaor/diplomatie/issues"
   },
-  "homepage": "https://github.com/codegouvaor/parlement#readme",
+  "homepage": "https://github.com/codegouvaor/diplomatie#readme",
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix --quiet",

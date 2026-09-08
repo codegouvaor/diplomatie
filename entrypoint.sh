@@ -71,7 +71,7 @@ configure_runtime() {
 
 display_header() {
     echo ""
-    echo "Parlement Gouv Website container"
+    echo "Diplomatie Gouv Website container"
     echo ""
     log_info "Node env: ${NODE_ENV}"
     log_info "Frontend: http://localhost:${FRONTEND_PORT}"
@@ -379,7 +379,7 @@ run_server() {
     setup_pnpm
 
     if [ "${NODE_ENV}" = "production" ]; then
-        log_info "Parlement Gouv Website frontend starting (static)"
+        log_info "Diplomatie Gouv Website frontend starting (static)"
         log_info "Frontend listening on 0.0.0.0:${FRONTEND_PORT}"
 
         if [ ! -d /app/out ]; then
@@ -397,7 +397,7 @@ run_server() {
         exec http-server ${http_server_args}
     fi
 
-    log_info "Parlement Gouv Website frontend starting (development)"
+    log_info "Diplomatie Gouv Website frontend starting (development)"
     log_info "Frontend listening on 0.0.0.0:${FRONTEND_PORT}"
 
     if [ -d /app/apps ]; then
@@ -425,7 +425,7 @@ run_server() {
 run_worker() {
     configure_runtime
 
-    log_info "Parlement Gouv Website API starting"
+    log_info "Diplomatie Gouv Website API starting"
     log_info "Backend runtime configured for 0.0.0.0:${SERVER_PORT}"
 
     if [ -z "${DATABASE_URL:-}" ]; then
@@ -455,7 +455,7 @@ run_worker() {
 run_air() {
     configure_runtime
 
-    log_info "Parlement Gouv Website API starting (hot-reload)"
+    log_info "Diplomatie Gouv Website API starting (hot-reload)"
 
     if ! run_prisma_schema_deploy; then
         if [ "${ALLOW_MIGRATION_FAILURE}" = "true" ]; then
