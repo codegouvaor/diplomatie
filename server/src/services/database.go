@@ -3,7 +3,7 @@ package services
 import (
 	"context"
 
-	"github.com/codegouvaor/parlement/server/src/models"
+	"github.com/codegouvaor/diplomatie/server/src/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

@@ -44,45 +44,19 @@ export type SiteAccountConfig = {
 };
 
 /**
- * Default site configuration for the Parliament of the Republic of Astoria.
- * Override this in site-specific configurations.
+ * Default site configuration for the Ministry of Foreign Affairs of the
+ * Republic of Astoria. Override this in site-specific configurations.
  *
- * The account menu follows the MyGouv personal-participation model: the
- * citizen reaches their participations, consultations, petitions, candidacies
- * and notifications through a single entry point. MyGouv remains the identity
- * and authentication layer — the Parliament application integrates with it
- * rather than duplicating it.
+ * The account menu follows the MyGouv identity model: the visitor reaches
+ * their profile and settings through a single entry point. MyGouv remains
+ * the identity and authentication layer — the diplomacy portal integrates
+ * with it rather than duplicating it.
  */
 export const siteAccountConfig: SiteAccountConfig = {
   enabled: true,
   labelKey: "header.accountLabel",
   logoutLabelKey: "header.logoutLink",
   items: [
-    {
-      labelKey: "header.account.participations",
-      href: "/mon-espace/participations",
-      iconId: "fr-icon-checkbox-circle-line",
-    },
-    {
-      labelKey: "header.account.consultations",
-      href: "/mon-espace/consultations",
-      iconId: "fr-icon-chat-3-line",
-    },
-    {
-      labelKey: "header.account.petitions",
-      href: "/mon-espace/petitions",
-      iconId: "fr-icon-edit-line",
-    },
-    {
-      labelKey: "header.account.candidatures",
-      href: "/mon-espace/candidatures",
-      iconId: "fr-icon-user-add-line",
-    },
-    {
-      labelKey: "header.account.notifications",
-      href: "/mon-espace/notifications",
-      iconId: "fr-icon-notification-3-line",
-    },
     {
       labelKey: "header.account.profile",
       href: "/profile",

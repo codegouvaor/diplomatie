@@ -1,0 +1,412 @@
+{
+  "brand": {
+    "republicName": "Republic of Astoria"
+  },
+  "header": {
+    "homeTitle": "Home of the Ministry of Foreign Affairs of the Republic of Astoria",
+    "serviceTitle": "Ministry of Foreign Affairs",
+    "serviceTagline": "The foreign relations of the Republic of Astoria",
+    "myGouv": "MyGouv",
+    "accountLabel": "My account",
+    "logoutLink": "Log out",
+    "account": {
+      "profile": "My profile",
+      "settings": "Settings"
+    }
+  },
+  "meta": {
+    "defaultTitle": "diplomatie.gouv.aor",
+    "suffix": "diplomatie.gouv.aor",
+    "description": "Official portal of the Ministry of Foreign Affairs of the Republic of Astoria: foreign relations, countries and territories, treaties and commitments, foreign policy.",
+    "searchPlaceholder": "Search on diplomatie.gouv.aor"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "skipToFooter": "Skip to footer",
+    "backToTop": {
+      "ariaLabel": "Back to top"
+    }
+  },
+  "home": {
+    "metaTitle": "Diplomacy — diplomatie.gouv.aor",
+    "hero": {
+      "kicker": "Ministry of Foreign Affairs",
+      "title": "The foreign relations of the Republic of Astoria",
+      "lead": "Find the diplomatic relations, the treaties, the official positions and the international activity of the Republic of Astoria.",
+      "exploreLink": "Explore the relations",
+      "searchLink": "Search"
+    },
+    "search": {
+      "title": "Search on diplomatie.gouv.aor",
+      "label": "Search for a country, a treaty, an organisation, an embassy, a news item…",
+      "placeholder": "Search on diplomatie.gouv.aor",
+      "popularLabel": "Frequent searches",
+      "popular": {
+        "france": "Relations with France",
+        "visa": "Travel formalities",
+        "accords": "Agreements with Japan",
+        "ambassades": "Embassies & consulates"
+      }
+    },
+    "stats": {
+      "kicker": "Diplomacy in figures",
+      "title": "Diplomatic indicators",
+      "lead": "A synthetic view of the network and the international relations of the Republic of Astoria.",
+      "note": "Demonstration data, awaiting the publication of the official data.",
+      "items": {
+        "relations": { "label": "Diplomatic relations" },
+        "missions": { "label": "Diplomatic missions" },
+        "accords": { "label": "International agreements" },
+        "organisations": { "label": "International organisations" }
+      }
+    },
+    "world": {
+      "kicker": "A global diplomacy",
+      "title": "Astoria in the world",
+      "lead": "Explore the diplomatic relations of the Republic of Astoria with the States and organisations of the world.",
+      "exploreLink": "Explore all countries",
+      "mapLabel": "Map of the diplomatic relations of the Republic of Astoria around the world",
+      "legendTitle": "State of relations",
+      "astoriaLabel": "Astoria",
+      "status": {
+        "strategic": "Strategic partner",
+        "reinforced": "Enhanced cooperation",
+        "established": "Established relations",
+        "developing": "Developing relations",
+        "suspended": "Suspended relations"
+      },
+      "accessListTitle": "Countries and territories shown on the map"
+    },
+    "relations": {
+      "kicker": "Spotlight",
+      "title": "Relations to follow",
+      "lead": "The most significant international relations of the Republic of Astoria, worth watching closely.",
+      "allLink": "See all relations",
+      "items": {
+        "france": { "tag": "Strategic partner" },
+        "japon": { "tag": "Enhanced cooperation" },
+        "unionEuropeenne": { "tag": "Institutional partner" },
+        "nationsUnies": { "tag": "Member" },
+        "allemagne": { "tag": "Strategic partner" },
+        "chine": { "tag": "Strategic partner" },
+        "bresil": { "tag": "Established relations" },
+        "afriqueDuSud": { "tag": "Established relations" }
+      }
+    },
+    "activity": {
+      "kicker": "Ongoing",
+      "title": "Diplomatic activity",
+      "lead": "Follow the visits, meetings, statements and events that shape Astorian diplomacy.",
+      "allLink": "All diplomatic activity",
+      "types": {
+        "meeting": "Meeting",
+        "declaration": "Statement",
+        "agreement": "Agreement",
+        "visit": "Official visit",
+        "event": "Event"
+      },
+      "items": {
+        "japon": "Meeting with the Minister of Foreign Affairs of Japan",
+        "conseilSecurite": "Astoria's statement at the United Nations Security Council",
+        "bresil": "Signature of a new cooperation agreement with Brazil",
+        "allemagne": "Official visit of the Minister to Germany",
+        "climat": "Multilateral ministerial meeting on climate"
+      }
+    },
+    "agreements": {
+      "kicker": "The official register",
+      "title": "International commitments",
+      "lead": "The site is the public register of the treaties and agreements concluded by the Republic of Astoria.",
+      "allLink": "Consult the register",
+      "totalLabel": "international agreements",
+      "recentTitle": "Recent commitments",
+      "note": "The full register will be published soon.",
+      "figures": {
+        "inForce": "in force",
+        "ratifying": "pending ratification",
+        "signed": "signed"
+      },
+      "status": {
+        "inForce": "In force",
+        "ratifying": "Pending ratification",
+        "signed": "Signed"
+      },
+      "items": {
+        "japon": { "title": "Free trade agreement with Japan" },
+        "france": { "title": "Scientific cooperation convention with France" },
+        "unionEuropeenne": { "title": "Strategic partnership with the European Union" },
+        "climat": { "title": "Multilateral climate convention" }
+      }
+    },
+    "positions": {
+      "kicker": "Astoria's voice",
+      "title": "Astoria's positions",
+      "lead": "What the Republic of Astoria officially defends on the international stage.",
+      "items": {
+        "paix": {
+          "title": "Peace & security",
+          "desc": "Multilateralism, disarmament and the peaceful settlement of disputes."
+        },
+        "climat": {
+          "title": "Climate & environment",
+          "desc": "Ambitious climate cooperation and honoured commitments."
+        },
+        "commerce": {
+          "title": "International trade",
+          "desc": "Open, fair and sustainable trade serving everyone."
+        },
+        "cyber": {
+          "title": "Cybersecurity",
+          "desc": "A stable, secure cyberspace respectful of international law."
+        },
+        "ia": {
+          "title": "Artificial intelligence",
+          "desc": "Trustworthy AI, serving the common good."
+        },
+        "cooperation": {
+          "title": "International cooperation",
+          "desc": "Solidarity, sustainable development and humanitarian aid."
+        }
+      },
+      "featured": {
+        "tag": "Official position",
+        "title": "International peace and security, priority of Astorian diplomacy",
+        "excerpt": "The Republic of Astoria reaffirms its commitment to international law, multilateralism and the peaceful settlement of disputes as foundations of the international order.",
+        "link": "Read the position"
+      }
+    },
+    "network": {
+      "kicker": "Our presence around the world",
+      "title": "Diplomatic network",
+      "lead": "The diplomatic and consular network of the Republic of Astoria, serving citizens and foreign policy.",
+      "exploreLink": "Explore the diplomatic network",
+      "items": {
+        "ambassades": { "label": "Embassies" },
+        "consulats": { "label": "Consulates" },
+        "missions": { "label": "Permanent missions" }
+      }
+    },
+    "services": {
+      "kicker": "For citizens",
+      "title": "Citizen services",
+      "lead": "Services for Astorian citizens, travelling or settled abroad.",
+      "items": {
+        "travel": {
+          "title": "Travelling abroad",
+          "desc": "Travel advice, visas and formalities."
+        },
+        "liveAbroad": {
+          "title": "Living abroad",
+          "desc": "Registering, rights and support."
+        },
+        "consular": {
+          "title": "Consular services",
+          "desc": "Civil status, nationality and consular procedures."
+        },
+        "emergency": {
+          "title": "Emergency & assistance",
+          "desc": "Assistance to Astorians in distress abroad."
+        }
+      }
+    },
+    "entities": {
+      "france": "France",
+      "allemagne": "Germany",
+      "royaume-uni": "United Kingdom",
+      "espagne": "Spain",
+      "italie": "Italy",
+      "pays-bas": "Netherlands",
+      "suede": "Sweden",
+      "pologne": "Poland",
+      "ukraine": "Ukraine",
+      "suisse": "Switzerland",
+      "norvege": "Norway",
+      "russie": "Russia",
+      "etats-unis": "United States",
+      "canada": "Canada",
+      "mexique": "Mexico",
+      "bresil": "Brazil",
+      "argentine": "Argentina",
+      "chili": "Chile",
+      "colombie": "Colombia",
+      "perou": "Peru",
+      "chine": "China",
+      "inde": "India",
+      "japon": "Japan",
+      "coree-du-sud": "South Korea",
+      "vietnam": "Vietnam",
+      "indonesie": "Indonesia",
+      "singapour": "Singapore",
+      "arabie-saoudite": "Saudi Arabia",
+      "emirats-arabes-unis": "United Arab Emirates",
+      "israel": "Israel",
+      "maroc": "Morocco",
+      "algerie": "Algeria",
+      "egypte": "Egypt",
+      "senegal": "Senegal",
+      "ghana": "Ghana",
+      "nigeria": "Nigeria",
+      "afrique-du-sud": "South Africa",
+      "australie": "Australia",
+      "nouvelle-zelande": "New Zealand",
+      "union-europeenne": "European Union",
+      "nations-unies": "United Nations"
+    }
+  },
+  "nav": {
+    "primary": {
+      "relationsExterieures": "Foreign relations",
+      "paysTerritoires": "Countries & territories",
+      "accordsEngagements": "Treaties & commitments",
+      "politiqueEtrangere": "Foreign policy",
+      "activiteDiplomatique": "Diplomatic activity",
+      "leMinistere": "The Ministry"
+    },
+    "panel": {
+      "relationsTitle": "Foreign relations",
+      "relationsText": "Understand the Republic of Astoria's relations with the States and organisations of the world.",
+      "relationsAllLink": "See all foreign relations",
+      "relationsBilaterales": "Bilateral relations",
+      "relationsBilateralesEtatsPartenaires": "Partner states",
+      "relationsBilateralesNiveauRelations": "Level of relations",
+      "relationsRegionales": "Regional relations",
+      "relationsRegionalesZones": "Geographic areas",
+      "relationsRegionalesInitiatives": "Regional initiatives",
+      "relationsOrganisationsInternationales": "International organisations",
+      "relationsOrganisationsMondiales": "Global organisations",
+      "relationsOrganisationsParticipation": "Astoria's participation",
+      "relationsPartenariatsStrategiques": "Strategic partnerships",
+      "relationsPartenariatsPartenairesPrivilegies": "Privileged partners",
+      "relationsPartenariatsCooperationsSectorielles": "Sectoral cooperation",
+      "paysTitle": "Countries & territories",
+      "paysText": "Explore the world and consult the diplomatic files of every State and territory.",
+      "paysAllLink": "See all countries",
+      "paysTousLesPays": "All countries",
+      "paysRepertoire": "Directory of countries",
+      "paysParRegion": "Search by region",
+      "paysFiches": "Country files",
+      "paysFichesRelationsBilaterales": "Bilateral relations",
+      "paysFichesAccords": "Treaties and agreements",
+      "paysRepresentationsDiplomatiques": "Diplomatic representations",
+      "paysRepresentationsAmbassades": "Embassies",
+      "paysRepresentationsConsulats": "Consulates",
+      "paysRelationsAvecAstoria": "Relations with Astoria",
+      "paysRelationsNiveaux": "Levels of relations",
+      "paysRelationsNouveautes": "Diplomatic news",
+      "accordsTitle": "Treaties & commitments",
+      "accordsText": "Consult the public register of Astoria's international treaties and commitments.",
+      "accordsAllLink": "See all treaties",
+      "accordsTraitesInternationaux": "International treaties",
+      "accordsTraitesMultilateraux": "Multilateral treaties",
+      "accordsTraitesRatifications": "Accessions and ratifications",
+      "accordsBilateraux": "Bilateral agreements",
+      "accordsBilaterauxParPays": "Agreements by country",
+      "accordsBilaterauxEnVigueur": "Agreements in force",
+      "accordsConventions": "Conventions",
+      "accordsConventionsMultilaterales": "Multilateral conventions",
+      "accordsConventionsCooperation": "Cooperation conventions",
+      "accordsEngagementsInternationaux": "International commitments",
+      "accordsEngagementsMultilateraux": "Multilateral commitments",
+      "accordsEngagementsSuivi": "Monitoring commitments",
+      "politiqueTitle": "Foreign policy",
+      "politiqueText": "Discover the doctrine, the priorities and the official positions of the Republic of Astoria.",
+      "politiqueAllLink": "See all foreign policy",
+      "politiquePrioritesDiplomatiques": "Diplomatic priorities",
+      "politiquePrioritesAxes": "Key strands of diplomacy",
+      "politiquePrioritesFeuilleDeRoute": "Roadmap",
+      "politiquePositionsOfficielles": "Official positions",
+      "politiquePositionsDeclarations": "Position statements",
+      "politiquePositionsPrisesDePosition": "Standpoints",
+      "politiqueCooperationInternationale": "International cooperation",
+      "politiqueCooperationDeveloppement": "Development cooperation",
+      "politiqueCooperationHumanitaire": "Humanitarian aid",
+      "politiqueDiplomatieEconomique": "Economic diplomacy",
+      "politiqueEconomiqueInvestissements": "Attractiveness and investment",
+      "politiqueEconomiqueEntreprises": "Support for businesses",
+      "activiteTitle": "Diplomatic activity",
+      "activiteText": "Follow contemporary diplomatic activity and how it evolves over time.",
+      "activiteAllLink": "See all diplomatic activity",
+      "activiteActualites": "News",
+      "activiteActualitesCommuniques": "Press releases",
+      "activiteActualitesCalendrier": "Diplomatic calendar",
+      "activiteVisitesOfficielles": "Official visits",
+      "activiteVisitesEtranger": "Visits abroad",
+      "activiteVisitesEnAstoria": "Visits to Astoria",
+      "activiteRencontresDiplomatiques": "Diplomatic meetings",
+      "activiteRencontresBilaterales": "Bilateral meetings",
+      "activiteRencontresMultilaterales": "Multilateral meetings",
+      "activiteDeclarations": "Statements",
+      "activiteDeclarationsMinistre": "Minister's statements",
+      "activiteDeclarationsConjointes": "Joint statements",
+      "ministereTitle": "The Ministry",
+      "ministereText": "Discover the institution, its organisation and its diplomatic network.",
+      "ministereAllLink": "See the Ministry",
+      "ministereMinistreCabinet": "Minister & cabinet",
+      "ministereMinistre": "The Minister",
+      "ministereMinistreAgenda": "Minister's agenda",
+      "ministereOrganisation": "Organisation",
+      "ministereOrganisationDirections": "Directorates",
+      "ministereOrganisationMissions": "Missions and values",
+      "ministereAmbassadesConsulats": "Embassies & consulates",
+      "ministereReseauDiplomatique": "Diplomatic network",
+      "ministereAmbassades": "Embassies",
+      "ministereCarrieresRecrutement": "Careers & recruitment",
+      "ministereCarrieresConcours": "Exams and recruitment",
+      "ministereCarrieresMetiers": "Careers in diplomacy"
+    }
+  },
+  "footer": {
+    "contentDescription": "Ministry of Foreign Affairs of the Republic of Astoria — the reference portal of the foreign policy and external relations of the Republic.",
+    "columns": {
+      "relationsExterieures": {
+        "title": "Foreign relations"
+      },
+      "paysTerritoires": {
+        "title": "Countries & territories"
+      },
+      "accordsEngagements": {
+        "title": "Treaties & commitments"
+      },
+      "politiqueEtrangere": {
+        "title": "Foreign policy"
+      },
+      "activiteDiplomatique": {
+        "title": "Diplomatic activity"
+      },
+      "leMinistere": {
+        "title": "The Ministry"
+      }
+    },
+    "bottom": {
+      "contact": "Contact",
+      "planDuPortail": "Site map",
+      "documentsOpposables": "Enforceable documents",
+      "privacy": "Privacy",
+      "cookies": "Cookie management",
+      "publications": "Official publications"
+    },
+    "license": "Unless otherwise stated, all content on this site is under the <link>etalab-2.0 licence</link>"
+  },
+  "stayInTouch": {
+    "newsletter": {
+      "title": "Diplomatic newsletter",
+      "desc": "Each month, a summary of the diplomatic activity of the Republic of Astoria.",
+      "label": "Your email address",
+      "placeholder": "name@example.aor",
+      "invalidEmail": "Please enter a valid email address.",
+      "submit": "Subscribe",
+      "success": "Thank you! Your subscription has been recorded.",
+      "hint": "Your address will only be used for the diplomatic newsletter."
+    },
+    "follow": {
+      "title": "Follow the Ministry",
+      "items": {
+        "x": "X (Twitter)",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "threads": "Threads"
+      }
+    }
+  }
+}

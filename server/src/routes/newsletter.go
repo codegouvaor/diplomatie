@@ -7,8 +7,8 @@ import (
 	"unicode"
 
 	"github.com/gin-gonic/gin"
-	"github.com/codegouvaor/parlement/server/src/models"
-	"github.com/codegouvaor/parlement/server/src/utils"
+	"github.com/codegouvaor/diplomatie/server/src/models"
+	"github.com/codegouvaor/diplomatie/server/src/utils"
 )
 
 func (h *apiHandler) listNewsletterSubscribers(c *gin.Context) {

@@ -1,4 +1,4 @@
-module github.com/codegouvaor/parlement
+module github.com/codegouvaor/diplomatie
 
 go 1.25.5
 

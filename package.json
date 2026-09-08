@@ -1,7 +1,7 @@
 {
   "name": "diplomatie-gouv",
   "version": "1.0.0",
-  "description": "Official Ministry of Foreign Affairs of the Republic of Astoria — legislation, parliamentary proceedings, and citizen participation.",
+  "description": "Open platform for Astoria's foreign policy, diplomatic relations, treaties, and international affairs.",
   "private": true,
   "type": "module",
   "workspaces": [

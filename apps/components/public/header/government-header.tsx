@@ -36,32 +36,33 @@ function collectChildHrefs(item: (typeof primaryNavigation)[number]): string[] {
 }
 
 /**
- * Government Header of the Parliament of the Republic of Astoria.
+ * Government Header of the Ministry of Foreign Affairs of the Republic of
+ * Astoria.
  *
- * Main navigation — the permanent information architecture of the Parliament
- * application, organised around six question-oriented subjects rather than
- * generic website categories:
+ * Main navigation — the permanent information architecture of the diplomacy
+ * portal, organised around the reference data of the foreign policy of the
+ * Republic rather than generic website categories:
  *
- *   Le Parlement             -> Comprendre : qu'est-ce que le Parlement ?
- *   Législation              -> Suivre : qu'est-ce qui devient du droit ?
- *   Travaux parlementaires   -> Suivre : que fait le Parlement actuellement ?
- *   Participation            -> Agir : comment puis-je participer ?
- *   Parlementaires           -> Accéder : qui exerce le mandat parlementaire ?
- *   Recherche                -> Accéder : que puis-je retrouver ?
+ *   Relations extérieures  -> Comprendre : avec qui Astoria entretient-elle des relations ?
+ *   Pays & territoires     -> Explorer : comment consulter les fiches du monde ?
+ *   Accords & engagements  -> Consulter : quels traités et engagements ont été conclus ?
+ *   Politique étrangère    -> Découvrir : quelles sont les positions officielles d'Astoria ?
+ *   Activité diplomatique  -> Suivre : que fait la diplomatie astorienne actuellement ?
+ *   Le Ministère           -> Connaître : comment fonctionne le Ministère et son réseau ?
  *
- * The first four are the thematic pillars of the institution (comprendre,
- * suivre, agir); the last two are transversal access points. MyGouv is not a
- * seventh subject: it is the citizen's authenticated identity and personal
- * participation space, and stays visually separated on the right of the
- * header as a distinct action.
+ * Each subject opens an institutional mega-menu (leader band with the section
+ * description and its main action, plus four theme columns) that prepares the
+ * diplomacy information graph — countries, treaties, visits, positions —
+ * without overloading the header. MyGouv is not a seventh subject: it is the
+ * citizen's authenticated identity and stays visually separated on the right
+ * of the header as a distinct action.
  *
  * When the user is authenticated, the "MyGouv" link in the quick-access
  * toolbar is hidden and a custom account menu (`UserAccountMenu`) is
- * rendered instead, presenting the personal-participation entries. The menu
- * content is driven by `siteAccountConfig` so each site can present a
- * different account interface without touching this component. MyGouv
- * remains the identity and authentication layer — the Parliament application
- * never duplicates it.
+ * rendered instead. The menu content is driven by `siteAccountConfig` so each
+ * site can present a different account interface without touching this
+ * component. MyGouv remains the identity and authentication layer — the
+ * diplomacy portal never duplicates it.
  */
 export function GovernmentHeader() {
   const t = useTranslations();
@@ -88,18 +89,29 @@ export function GovernmentHeader() {
 
     const categories: MegaMenuProps.Category[] = [
       ...(item.categories ?? []).map((category): MegaMenuProps.Category => {
-        // Column headings are rendered as plain text (`categoryMainText`),
-        // never as links: they introduce the links beneath them and are not
-        // destinations themselves.
-        const headingKey = category.mainLink ? category.mainLink.labelKey : category.titleKey;
-        return {
-          categoryMainText: tNavPanel(headingKey),
-          links: category.links.map((link) => ({
-            text: tNavPanel(link.labelKey),
-            linkProps: { href: link.href },
-            isActive: isNavItemActive(link.href, pathname),
-          })),
-        };
+        // When a category is headed by its main destination (the theme page),
+        // the heading is rendered as a link (`categoryMainLink`) so the four
+        // main entries of the panel are directly reachable. Otherwise the
+        // heading is plain text (`categoryMainText`) introducing the links
+        // beneath it.
+        const links = category.links.map((link) => ({
+          text: tNavPanel(link.labelKey),
+          linkProps: { href: link.href },
+          isActive: isNavItemActive(link.href, pathname),
+        }));
+
+        return category.mainLink
+          ? {
+              categoryMainLink: {
+                text: tNavPanel(category.mainLink.labelKey),
+                linkProps: { href: category.mainLink.href },
+              },
+              links,
+            }
+          : {
+              categoryMainText: tNavPanel(category.titleKey),
+              links,
+            };
       }),
     ];
 
@@ -160,6 +172,9 @@ export function GovernmentHeader() {
         identity={{
           imgUrl: "/astoria-gouv.png",
           alt: tBrand("republicName"),
+          // The lockup artwork already carries the full wordmark, so no
+          // institution line is displayed under the image. ADS requires the
+          // field, hence the empty string.
           institution: "",
         }}
         homeLinkProps={{

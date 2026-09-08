@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	redisclient "github.com/codegouvaor/parlement/server/internal/redis"
-	"github.com/codegouvaor/parlement/server/src/interfaces"
+	redisclient "github.com/codegouvaor/diplomatie/server/internal/redis"
+	"github.com/codegouvaor/diplomatie/server/src/interfaces"
 )
 
 type PresenceService struct {

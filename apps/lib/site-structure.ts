@@ -9,12 +9,12 @@
 export const PORTAL_HOME = "/";
 
 export type PrimaryNavKey =
-  | "leParlement"
-  | "legislation"
-  | "travauxParlementaires"
-  | "participation"
-  | "parlementaires"
-  | "recherche";
+  | "relationsExterieures"
+  | "paysTerritoires"
+  | "accordsEngagements"
+  | "politiqueEtrangere"
+  | "activiteDiplomatique"
+  | "leMinistere";
 
 /** A link inside a mega-menu panel; its label is a `nav.panel` message key. */
 export type PrimaryNavLink = {
@@ -46,13 +46,15 @@ export type MegaMenuCategory =
  * One top-level entry of the Government Header navigation.
  *
  * Navigation principle (info.gouv.fr-inspired, adapted to Astoria): the
- * Parliament header is question- and task-oriented rather than organised
- * around generic website categories. Every section answers a citizen question
- * and opens a mega-menu panel composed of
+ * diplomacy header is organised around the reference data of the foreign
+ * policy of the Republic — the subjects the visitor needs to understand the
+ * external relations of Astoria. Every section opens a mega-menu panel
+ * composed of
  *  - a leader band: the section name, a one-line description and the main
  *    section action,
- *  - a small number of link columns — the mega-menu is not the sitemap of the
- *    portal: only the destinations that matter to the user journey.
+ *  - four theme columns, each headed by the main destination of the group
+ *    followed by a few related destinations. The mega-menu is not the sitemap
+ *    of the portal: only the destinations that matter to the visitor journey.
  *
  * Top-level labels resolve under `nav.primary` (`labelKey`), panel content
  * under `nav.panel` (`titleKey`, `paragraphKey` and nested `labelKey`s).
@@ -83,11 +85,12 @@ export type FooterColumn = {
 };
 
 export const sectionPaths = {
-  parlement: "/parlement",
-  legislation: "/legislation",
-  travaux: "/travaux",
-  participation: "/participation",
-  parlementaires: "/parlementaires",
+  relationsExterieures: "/relations-exterieures",
+  pays: "/pays",
+  accords: "/accords",
+  politiqueEtrangere: "/politique-etrangere",
+  activiteDiplomatique: "/activite-diplomatique",
+  ministere: "/ministere",
 } as const;
 
 export const legalPaths = {
@@ -108,301 +111,493 @@ export const pageAnchors = {
 
 /**
  * Secondary navigation zone of the site footer, distinct from the main
- * navigation of the header. Organised like an institutional footer:
+ * navigation of the header. Organised like an institutional footer, mirroring
+ * the six subjects of the header navigation:
  *
- *   Le Parlement    → presentation, organisation, the three chambers, presidency
- *   Législation     → projets, propositions, textes adoptés, archives
- *   Travaux         → agenda, séances, commissions, archives
- *   Participation   → consultations, candidatures, MyGouv
- *   Presse & droits → presse, légal, plan du portail
+ *   Relations extérieures → bilatérales, régionales, organisations, partenariats
+ *   Pays & territoires     → répertoire, fiches, représentations, relations
+ *   Accords & engagements  → traités, accords, conventions, engagements
+ *   Politique étrangère    → priorités, positions, coopération, diplomatie économique
+ *   Activité diplomatique  → actualités, visites, rencontres, déclarations
+ *   Le Ministère           → ministre, organisation, ambassades, carrières
  *
  * Column titles resolve under `footer.columns`, links under `nav.panel`.
  */
 export const footerNavigation: ReadonlyArray<FooterColumn> = [
   {
-    columnKey: "leParlement",
+    columnKey: "relationsExterieures",
     links: [
-      { labelKey: "parlementPresentation", href: "/parlement/presentation" },
-      { labelKey: "parlementOrganisation", href: "/parlement/organisation" },
-      { labelKey: "parlementTroisChambres", href: "/parlement/chambres" },
-      { labelKey: "parlementPresidence", href: "/parlement/presidence" },
+      { labelKey: "relationsBilaterales", href: "/relations-exterieures/bilaterales" },
+      { labelKey: "relationsRegionales", href: "/relations-exterieures/regionales" },
+      {
+        labelKey: "relationsOrganisationsInternationales",
+        href: "/relations-exterieures/organisations-internationales",
+      },
+      {
+        labelKey: "relationsPartenariatsStrategiques",
+        href: "/relations-exterieures/partenariats-strategiques",
+      },
     ],
   },
   {
-    columnKey: "legislation",
+    columnKey: "paysTerritoires",
     links: [
-      { labelKey: "legislationProjetsLoi", href: "/legislation/projets-de-loi" },
-      { labelKey: "legislationPropositionsLoi", href: "/legislation/propositions-de-loi" },
-      { labelKey: "legislationTextesAdoptes", href: "/legislation/textes-adoptes" },
-      { labelKey: "legislationArchives", href: "/legislation/archives" },
+      { labelKey: "paysTousLesPays", href: "/pays" },
+      { labelKey: "paysFiches", href: "/pays/fiches" },
+      { labelKey: "paysRepresentationsDiplomatiques", href: "/pays/representations" },
+      { labelKey: "paysRelationsAvecAstoria", href: "/pays/relations-avec-astoria" },
     ],
   },
   {
-    columnKey: "travaux",
+    columnKey: "accordsEngagements",
     links: [
-      { labelKey: "travauxAgendaJour", href: "/travaux/agenda-du-jour" },
-      { labelKey: "travauxSeances", href: "/travaux/seances" },
-      { labelKey: "travauxCommissions", href: "/travaux/commissions" },
-      { labelKey: "travauxArchives", href: "/travaux/archives" },
+      { labelKey: "accordsTraitesInternationaux", href: "/accords/traites-internationaux" },
+      { labelKey: "accordsBilateraux", href: "/accords/bilateraux" },
+      { labelKey: "accordsConventions", href: "/accords/conventions" },
+      { labelKey: "accordsEngagementsInternationaux", href: "/accords/engagements" },
     ],
   },
   {
-    columnKey: "participation",
+    columnKey: "politiqueEtrangere",
     links: [
-      { labelKey: "participationConsultations", href: "/participation/consultations" },
-      { labelKey: "participationCandidatures", href: "/participation/candidatures" },
-      { labelKey: "participationMyGouv", href: "https://sso.gouv.aor" },
+      { labelKey: "politiquePrioritesDiplomatiques", href: "/politique-etrangere/priorites" },
+      { labelKey: "politiquePositionsOfficielles", href: "/politique-etrangere/positions-officielles" },
+      { labelKey: "politiqueCooperationInternationale", href: "/politique-etrangere/cooperation" },
+      { labelKey: "politiqueDiplomatieEconomique", href: "/politique-etrangere/diplomatie-economique" },
+    ],
+  },
+  {
+    columnKey: "activiteDiplomatique",
+    links: [
+      { labelKey: "activiteActualites", href: "/activite-diplomatique/actualites" },
+      { labelKey: "activiteVisitesOfficielles", href: "/activite-diplomatique/visites-officielles" },
+      { labelKey: "activiteRencontresDiplomatiques", href: "/activite-diplomatique/rencontres" },
+      { labelKey: "activiteDeclarations", href: "/activite-diplomatique/declarations" },
+    ],
+  },
+  {
+    columnKey: "leMinistere",
+    links: [
+      { labelKey: "ministereMinistreCabinet", href: "/ministere/ministre" },
+      { labelKey: "ministereOrganisation", href: "/ministere/organisation" },
+      { labelKey: "ministereAmbassadesConsulats", href: "/ministere/ambassades-consulats" },
+      { labelKey: "ministereCarrieresRecrutement", href: "/ministere/carrieres" },
     ],
   },
 ];
 
 /**
- * Main navigation of the Government Header of the Parliament of the Republic
- * of Astoria — the permanent information architecture of the application, in
- * six subjects. The header is question-oriented: every entry answers a
- * citizen question about the institution.
+ * Main navigation of the Government Header of the Ministry of Foreign Affairs
+ * of the Republic of Astoria — the permanent information architecture of the
+ * application, organised in six subjects built around the reference data of
+ * the foreign policy of the Republic:
  *
- *   Le Parlement          → Comprendre : qu'est-ce que le Parlement ?
- *   Législation           → Suivre : qu'est-ce qui devient du droit ?
- *   Travaux parlementaires→ Suivre : que fait le Parlement actuellement ?
- *   Participation         → Agir : comment puis-je participer ?
- *   Parlementaires        → Accéder : qui exerce le mandat parlementaire ?
- *   Recherche             → Accéder : que puis-je retrouver ?
+ *   Relations extérieures  → Comprendre : avec qui Astoria entretient-elle des relations ?
+ *   Pays & territoires     → Explorer : comment consulter les fiches du monde ?
+ *   Accords & engagements  → Consulter : quels traités et engagements ont été conclus ?
+ *   Politique étrangère    → Découvrir : quelles sont les positions officielles d'Astoria ?
+ *   Activité diplomatique  → Suivre : que fait la diplomatie astorienne actuellement ?
+ *   Le Ministère           → Connaître : comment fonctionne le Ministère et son réseau ?
  *
- * The first four are the thematic pillars of the institution (comprendre,
- * suivre, agir); the last two are transversal access points. Each pillar
- * opens a mega-menu panel with a leader band and a few link columns. The
- * structure is configuration-driven: the same architecture can be reused by
- * another institution by providing a different `primaryNavigation`.
+ * Each subject opens a mega-menu panel with a leader band and four theme
+ * columns; the panel is not the sitemap of the portal — it prepares the
+ * diplomacy information graph (countries, treaties, visits, positions)
+ * without overloading the header. The structure is configuration-driven: the
+ * same architecture can be reused by another institution by providing a
+ * different `primaryNavigation`.
  *
- * Hrefs follow the URL plan of the Parliament portal; a few point to pages
+ * Hrefs follow the URL plan of the diplomacy portal; a few point to pages
  * being published and will resolve as soon as those sections ship.
  */
 export const primaryNavigation: ReadonlyArray<PrimaryNavItem> = [
   {
     type: "megaMenu",
-    labelKey: "leParlement",
-    href: "/parlement",
+    labelKey: "relationsExterieures",
+    href: sectionPaths.relationsExterieures,
     leader: {
-      titleKey: "parlementTitle",
-      paragraphKey: "parlementText",
-      link: { labelKey: "parlementAllLink", href: "/parlement" },
+      titleKey: "relationsTitle",
+      paragraphKey: "relationsText",
+      link: { labelKey: "relationsAllLink", href: sectionPaths.relationsExterieures },
     },
     categories: [
       {
-        // L'INSTITUTION
-        titleKey: "parlementInstitutionCategory",
+        // RELATIONS BILATÉRALES
+        mainLink: { labelKey: "relationsBilaterales", href: "/relations-exterieures/bilaterales" },
         links: [
-          { labelKey: "parlementPresentation", href: "/parlement/presentation" },
-          { labelKey: "parlementRoleConstitutionnel", href: "/parlement/role-constitutionnel" },
-          { labelKey: "parlementCadreConstitutionnel", href: "/parlement/cadre-constitutionnel" },
+          {
+            labelKey: "relationsBilateralesEtatsPartenaires",
+            href: "/relations-exterieures/bilaterales/etats-partenaires",
+          },
+          {
+            labelKey: "relationsBilateralesNiveauRelations",
+            href: "/relations-exterieures/bilaterales/niveau-des-relations",
+          },
         ],
       },
       {
-        // ORGANISATION & FONCTIONNEMENT
-        titleKey: "parlementOrganisationCategory",
+        // RELATIONS RÉGIONALES
+        mainLink: { labelKey: "relationsRegionales", href: "/relations-exterieures/regionales" },
         links: [
-          { labelKey: "parlementOrganisation", href: "/parlement/organisation" },
-          { labelKey: "parlementFonctionnement", href: "/parlement/fonctionnement" },
-          { labelKey: "parlementStructureInstitutionnelle", href: "/parlement/structure-institutionnelle" },
+          {
+            labelKey: "relationsRegionalesZones",
+            href: "/relations-exterieures/regionales/zones-geographiques",
+          },
+          {
+            labelKey: "relationsRegionalesInitiatives",
+            href: "/relations-exterieures/regionales/initiatives",
+          },
         ],
       },
       {
-        // LES TROIS CHAMBRES
-        titleKey: "parlementChambresCategory",
+        // ORGANISATIONS INTERNATIONALES
+        mainLink: {
+          labelKey: "relationsOrganisationsInternationales",
+          href: "/relations-exterieures/organisations-internationales",
+        },
         links: [
-          { labelKey: "parlementChambreCitoyenne", href: "/parlement/chambres/chambre-citoyenne" },
-          { labelKey: "parlementChambreDeputes", href: "/parlement/chambres/chambre-des-deputes" },
-          { labelKey: "parlementSenat", href: "/parlement/chambres/senat" },
+          {
+            labelKey: "relationsOrganisationsMondiales",
+            href: "/relations-exterieures/organisations-internationales/mondiales",
+          },
+          {
+            labelKey: "relationsOrganisationsParticipation",
+            href: "/relations-exterieures/organisations-internationales/participation",
+          },
         ],
       },
       {
-        // PRÉSIDENCE & ADMINISTRATION
-        titleKey: "parlementPresidenceCategory",
+        // PARTENARIATS STRATÉGIQUES
+        mainLink: {
+          labelKey: "relationsPartenariatsStrategiques",
+          href: "/relations-exterieures/partenariats-strategiques",
+        },
         links: [
-          { labelKey: "parlementPresidence", href: "/parlement/presidence" },
-          { labelKey: "parlementAdministration", href: "/parlement/administration-parlementaire" },
+          {
+            labelKey: "relationsPartenariatsPartenairesPrivilegies",
+            href: "/relations-exterieures/partenariats-strategiques/partenaires-privilegies",
+          },
+          {
+            labelKey: "relationsPartenariatsCooperationsSectorielles",
+            href: "/relations-exterieures/partenariats-strategiques/cooperations-sectorielles",
+          },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "legislation",
-    href: "/legislation",
+    labelKey: "paysTerritoires",
+    href: sectionPaths.pays,
     leader: {
-      titleKey: "legislationTitle",
-      paragraphKey: "legislationText",
-      link: { labelKey: "legislationAllLink", href: "/legislation" },
+      titleKey: "paysTitle",
+      paragraphKey: "paysText",
+      link: { labelKey: "paysAllLink", href: sectionPaths.pays },
     },
     categories: [
       {
-        // L'INITIATIVE
-        titleKey: "legislationInitiativeCategory",
+        // TOUS LES PAYS
+        mainLink: { labelKey: "paysTousLesPays", href: "/pays" },
         links: [
-          { labelKey: "legislationProjetsLoi", href: "/legislation/projets-de-loi" },
-          { labelKey: "legislationPropositionsLoi", href: "/legislation/propositions-de-loi" },
-          { labelKey: "legislationAmendements", href: "/legislation/amendements" },
+          { labelKey: "paysRepertoire", href: "/pays/repertoire" },
+          { labelKey: "paysParRegion", href: "/pays/par-region" },
         ],
       },
       {
-        // L'EXAMEN
-        titleKey: "legislationExamenCategory",
+        // FICHES PAYS
+        mainLink: { labelKey: "paysFiches", href: "/pays/fiches" },
         links: [
-          { labelKey: "legislationTextesEnCours", href: "/legislation/textes-en-cours" },
-          { labelKey: "legislationDebats", href: "/legislation/debats" },
-          { labelKey: "legislationVotes", href: "/legislation/votes" },
+          {
+            labelKey: "paysFichesRelationsBilaterales",
+            href: "/pays/fiches/relations-bilaterales",
+          },
+          { labelKey: "paysFichesAccords", href: "/pays/fiches/accords" },
         ],
       },
       {
-        // LE CYCLE DE VIE D'UN TEXTE
-        titleKey: "legislationCycleCategory",
+        // REPRÉSENTATIONS DIPLOMATIQUES
+        mainLink: { labelKey: "paysRepresentationsDiplomatiques", href: "/pays/representations" },
         links: [
-          { labelKey: "legislationTextesAdoptes", href: "/legislation/textes-adoptes" },
-          { labelKey: "legislationVersionsSuccessives", href: "/legislation/versions-successives" },
-          { labelKey: "legislationHistoriqueLegislatif", href: "/legislation/historique-legislatif" },
-          { labelKey: "legislationPromulgation", href: "/legislation/promulgation" },
+          { labelKey: "paysRepresentationsAmbassades", href: "/pays/representations/ambassades" },
+          { labelKey: "paysRepresentationsConsulats", href: "/pays/representations/consulats" },
         ],
       },
       {
-        // LES ARCHIVES
-        titleKey: "legislationArchivesCategory",
+        // RELATIONS AVEC ASTORIA
+        mainLink: { labelKey: "paysRelationsAvecAstoria", href: "/pays/relations-avec-astoria" },
         links: [
-          { labelKey: "legislationArchives", href: "/legislation/archives" },
+          { labelKey: "paysRelationsNiveaux", href: "/pays/relations-avec-astoria/niveaux" },
+          { labelKey: "paysRelationsNouveautes", href: "/pays/relations-avec-astoria/nouveautes" },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "travauxParlementaires",
-    href: "/travaux",
+    labelKey: "accordsEngagements",
+    href: sectionPaths.accords,
     leader: {
-      titleKey: "travauxTitle",
-      paragraphKey: "travauxText",
-      link: { labelKey: "travauxAllLink", href: "/travaux" },
+      titleKey: "accordsTitle",
+      paragraphKey: "accordsText",
+      link: { labelKey: "accordsAllLink", href: sectionPaths.accords },
     },
     categories: [
       {
-        // EN CE MOMENT
-        titleKey: "travauxEnCeMomentCategory",
+        // TRAITÉS INTERNATIONAUX
+        mainLink: {
+          labelKey: "accordsTraitesInternationaux",
+          href: "/accords/traites-internationaux",
+        },
         links: [
-          { labelKey: "travauxAgendaJour", href: "/travaux/agenda-du-jour" },
-          { labelKey: "travauxAgendaAVenir", href: "/travaux/agenda-a-venir" },
-          { labelKey: "travauxSessions", href: "/travaux/sessions" },
+          {
+            labelKey: "accordsTraitesMultilateraux",
+            href: "/accords/traites-internationaux/multilateraux",
+          },
+          {
+            labelKey: "accordsTraitesRatifications",
+            href: "/accords/traites-internationaux/ratifications",
+          },
         ],
       },
       {
-        // SÉANCES & DÉBATS
-        titleKey: "travauxSeancesCategory",
+        // ACCORDS BILATÉRAUX
+        mainLink: { labelKey: "accordsBilateraux", href: "/accords/bilateraux" },
         links: [
-          { labelKey: "travauxSeances", href: "/travaux/seances" },
-          { labelKey: "travauxDebats", href: "/travaux/debats" },
-          { labelKey: "travauxVotes", href: "/travaux/votes" },
+          { labelKey: "accordsBilaterauxParPays", href: "/accords/bilateraux/par-pays" },
+          { labelKey: "accordsBilaterauxEnVigueur", href: "/accords/bilateraux/en-vigueur" },
         ],
       },
       {
-        // COMMISSIONS & AUDITIONS
-        titleKey: "travauxCommissionsCategory",
+        // CONVENTIONS
+        mainLink: { labelKey: "accordsConventions", href: "/accords/conventions" },
         links: [
-          { labelKey: "travauxCommissions", href: "/travaux/commissions" },
-          { labelKey: "travauxAuditions", href: "/travaux/auditions" },
-          { labelKey: "travauxQuestionsParlementaires", href: "/travaux/questions-parlementaires" },
-          { labelKey: "travauxRapports", href: "/travaux/rapports" },
+          {
+            labelKey: "accordsConventionsMultilaterales",
+            href: "/accords/conventions/multilaterales",
+          },
+          {
+            labelKey: "accordsConventionsCooperation",
+            href: "/accords/conventions/cooperation",
+          },
         ],
       },
       {
-        // LES ARCHIVES DES TRAVAUX
-        titleKey: "travauxArchivesCategory",
+        // ENGAGEMENTS INTERNATIONAUX
+        mainLink: {
+          labelKey: "accordsEngagementsInternationaux",
+          href: "/accords/engagements",
+        },
         links: [
-          { labelKey: "travauxArchives", href: "/travaux/archives" },
+          {
+            labelKey: "accordsEngagementsMultilateraux",
+            href: "/accords/engagements/multilateraux",
+          },
+          { labelKey: "accordsEngagementsSuivi", href: "/accords/engagements/suivi" },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "participation",
-    href: "/participation",
+    labelKey: "politiqueEtrangere",
+    href: sectionPaths.politiqueEtrangere,
     leader: {
-      titleKey: "participationTitle",
-      paragraphKey: "participationText",
-      link: { labelKey: "participationAllLink", href: "/participation" },
+      titleKey: "politiqueTitle",
+      paragraphKey: "politiqueText",
+      link: { labelKey: "politiqueAllLink", href: sectionPaths.politiqueEtrangere },
     },
     categories: [
       {
-        // PRENDRE PART
-        titleKey: "participationPrendrePartCategory",
+        // PRIORITÉS DIPLOMATIQUES
+        mainLink: {
+          labelKey: "politiquePrioritesDiplomatiques",
+          href: "/politique-etrangere/priorites",
+        },
         links: [
-          { labelKey: "participationConsultations", href: "/participation/consultations" },
-          { labelKey: "participationPetitions", href: "/participation/petitions" },
-          { labelKey: "participationInitiativesCitoyennes", href: "/participation/initiatives-citoyennes" },
+          { labelKey: "politiquePrioritesAxes", href: "/politique-etrangere/priorites/axes" },
+          {
+            labelKey: "politiquePrioritesFeuilleDeRoute",
+            href: "/politique-etrangere/priorites/feuille-de-route",
+          },
         ],
       },
       {
-        // VOTES & RÉFÉRENDUMS
-        titleKey: "participationVotesCategory",
+        // POSITIONS OFFICIELLES
+        mainLink: {
+          labelKey: "politiquePositionsOfficielles",
+          href: "/politique-etrangere/positions-officielles",
+        },
         links: [
-          { labelKey: "participationVotesCitoyens", href: "/participation/votes" },
-          { labelKey: "participationReferendums", href: "/participation/referendums" },
+          {
+            labelKey: "politiquePositionsDeclarations",
+            href: "/politique-etrangere/positions-officielles/declarations",
+          },
+          {
+            labelKey: "politiquePositionsPrisesDePosition",
+            href: "/politique-etrangere/positions-officielles/prises-de-position",
+          },
         ],
       },
       {
-        // DEVENIR PARLEMENTAIRE
-        titleKey: "participationCandidatureCategory",
+        // COOPÉRATION INTERNATIONALE
+        mainLink: {
+          labelKey: "politiqueCooperationInternationale",
+          href: "/politique-etrangere/cooperation",
+        },
         links: [
-          { labelKey: "participationCandidatures", href: "/participation/candidatures" },
-          { labelKey: "participationChambreCitoyenne", href: "/participation/chambre-citoyenne" },
+          {
+            labelKey: "politiqueCooperationDeveloppement",
+            href: "/politique-etrangere/cooperation/developpement",
+          },
+          {
+            labelKey: "politiqueCooperationHumanitaire",
+            href: "/politique-etrangere/cooperation/humanitaire",
+          },
         ],
       },
       {
-        // MON ESPACE
-        titleKey: "participationMyGouvCategory",
+        // DIPLOMATIE ÉCONOMIQUE
+        mainLink: {
+          labelKey: "politiqueDiplomatieEconomique",
+          href: "/politique-etrangere/diplomatie-economique",
+        },
         links: [
-          { labelKey: "participationMyGouv", href: "https://sso.gouv.aor" },
+          {
+            labelKey: "politiqueEconomiqueInvestissements",
+            href: "/politique-etrangere/diplomatie-economique/investissements",
+          },
+          {
+            labelKey: "politiqueEconomiqueEntreprises",
+            href: "/politique-etrangere/diplomatie-economique/entreprises",
+          },
         ],
       },
     ],
   },
   {
     type: "megaMenu",
-    labelKey: "parlementaires",
-    href: "/parlementaires",
+    labelKey: "activiteDiplomatique",
+    href: sectionPaths.activiteDiplomatique,
     leader: {
-      titleKey: "parlementairesTitle",
-      paragraphKey: "parlementairesText",
-      link: { labelKey: "parlementairesAllLink", href: "/parlementaires" },
+      titleKey: "activiteTitle",
+      paragraphKey: "activiteText",
+      link: { labelKey: "activiteAllLink", href: sectionPaths.activiteDiplomatique },
     },
     categories: [
       {
-        // LES MEMBRES
-        titleKey: "parlementairesMembresCategory",
+        // ACTUALITÉS
+        mainLink: { labelKey: "activiteActualites", href: "/activite-diplomatique/actualites" },
         links: [
-          { labelKey: "parlementairesChambreCitoyenne", href: "/parlementaires/chambre-citoyenne" },
-          { labelKey: "parlementairesDeputes", href: "/parlementaires/deputes" },
-          { labelKey: "parlementairesSenateurs", href: "/parlementaires/senateurs" },
+          {
+            labelKey: "activiteActualitesCommuniques",
+            href: "/activite-diplomatique/actualites/communiques",
+          },
+          {
+            labelKey: "activiteActualitesCalendrier",
+            href: "/activite-diplomatique/actualites/calendrier",
+          },
         ],
       },
       {
-        // GROUPES PARLEMENTAIRES
-        titleKey: "parlementairesGroupesCategory",
+        // VISITES OFFICIELLES
+        mainLink: {
+          labelKey: "activiteVisitesOfficielles",
+          href: "/activite-diplomatique/visites-officielles",
+        },
         links: [
-          { labelKey: "parlementairesGroupes", href: "/parlementaires/groupes" },
+          {
+            labelKey: "activiteVisitesEtranger",
+            href: "/activite-diplomatique/visites-officielles/a-l-etranger",
+          },
+          {
+            labelKey: "activiteVisitesEnAstoria",
+            href: "/activite-diplomatique/visites-officielles/en-astoria",
+          },
         ],
       },
       {
-        // MANDATS & ACTIVITÉ
-        titleKey: "parlementairesMandatCategory",
+        // RENCONTRES DIPLOMATIQUES
+        mainLink: {
+          labelKey: "activiteRencontresDiplomatiques",
+          href: "/activite-diplomatique/rencontres",
+        },
         links: [
-          { labelKey: "parlementairesMandats", href: "/parlementaires/mandats" },
-          { labelKey: "parlementairesActivite", href: "/parlementaires/activite" },
+          {
+            labelKey: "activiteRencontresBilaterales",
+            href: "/activite-diplomatique/rencontres/bilaterales",
+          },
+          {
+            labelKey: "activiteRencontresMultilaterales",
+            href: "/activite-diplomatique/rencontres/multilaterales",
+          },
+        ],
+      },
+      {
+        // DÉCLARATIONS
+        mainLink: { labelKey: "activiteDeclarations", href: "/activite-diplomatique/declarations" },
+        links: [
+          {
+            labelKey: "activiteDeclarationsMinistre",
+            href: "/activite-diplomatique/declarations/ministre",
+          },
+          {
+            labelKey: "activiteDeclarationsConjointes",
+            href: "/activite-diplomatique/declarations/conjointes",
+          },
         ],
       },
     ],
   },
   {
-    type: "link",
-    labelKey: "recherche",
-    href: searchPath,
+    type: "megaMenu",
+    labelKey: "leMinistere",
+    href: sectionPaths.ministere,
+    leader: {
+      titleKey: "ministereTitle",
+      paragraphKey: "ministereText",
+      link: { labelKey: "ministereAllLink", href: sectionPaths.ministere },
+    },
+    categories: [
+      {
+        // MINISTRE & CABINET
+        mainLink: { labelKey: "ministereMinistreCabinet", href: "/ministere/ministre" },
+        links: [
+          { labelKey: "ministereMinistre", href: "/ministere/ministre/ministre" },
+          { labelKey: "ministereMinistreAgenda", href: "/ministere/ministre/agenda" },
+        ],
+      },
+      {
+        // ORGANISATION
+        mainLink: { labelKey: "ministereOrganisation", href: "/ministere/organisation" },
+        links: [
+          { labelKey: "ministereOrganisationDirections", href: "/ministere/organisation/directions" },
+          { labelKey: "ministereOrganisationMissions", href: "/ministere/organisation/missions" },
+        ],
+      },
+      {
+        // AMBASSADES & CONSULATS
+        mainLink: {
+          labelKey: "ministereAmbassadesConsulats",
+          href: "/ministere/ambassades-consulats",
+        },
+        links: [
+          {
+            labelKey: "ministereReseauDiplomatique",
+            href: "/ministere/ambassades-consulats/reseau",
+          },
+          { labelKey: "ministereAmbassades", href: "/ministere/ambassades-consulats/ambassades" },
+        ],
+      },
+      {
+        // CARRIÈRES & RECRUTEMENT
+        mainLink: {
+          labelKey: "ministereCarrieresRecrutement",
+          href: "/ministere/carrieres",
+        },
+        links: [
+          { labelKey: "ministereCarrieresConcours", href: "/ministere/carrieres/concours" },
+          { labelKey: "ministereCarrieresMetiers", href: "/ministere/carrieres/metiers" },
+        ],
+      },
+    ],
   },
 ];

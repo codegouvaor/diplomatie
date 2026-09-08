@@ -44,7 +44,7 @@ COPY apps/package.json ./apps/
 RUN mkdir -p apps/next/fond/google && \
     printf 'module.exports = {};\n' > apps/next/fond/google/index.js && \
     printf '{"name":"google","version":"0.0.0"}\n' > apps/next/fond/google/package.json && \
-    pnpm install --filter @diplomatie/apps... --no-frozen-lockfile
+    pnpm install --filter @diplomatie-gouv/apps... --no-frozen-lockfile
 
 COPY apps/ ./apps/
 
