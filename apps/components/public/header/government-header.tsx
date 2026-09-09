@@ -10,7 +10,12 @@ import type { MegaMenuProps } from "@codegouvaor/react-ads/MainNavigation/MegaMe
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { getDomainUrl } from "@/lib/domains";
-import { pageAnchors, primaryNavigation, searchPath } from "@/lib/site-structure";
+import {
+  pageAnchors,
+  primaryNavigation,
+  searchPath,
+  type NavigationSection,
+} from "@/lib/site-structure";
 import { useAuth } from "@/context/AuthContext";
 import { UserAccountMenu } from "@/components/public/header/user-account-menu";
 import { siteAccountConfig } from "@/lib/site-config";
@@ -20,17 +25,17 @@ const isNavItemActive = (href: string, pathname: string): boolean =>
   href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
 /**
- * Collect every href reachable from a mega-menu item (categories, featured
- * link, leader link) so the parent tab can be marked active when the user
- * lands on any child page — even if the child href lives outside the
- * parent's own path tree (e.g. /decryptages under Actualites -> /news).
+ * Collect every href reachable from a navigation section (leader action,
+ * primary destinations, secondary destinations) so the parent tab can be
+ * marked active when the user lands on any child page — even if the child
+ * href lives outside the parent's own path tree (e.g. /contact under
+ * “Le Ministère”).
  */
-function collectChildHrefs(item: (typeof primaryNavigation)[number]): string[] {
-  if (item.type === "link") return [];
-  const hrefs: string[] = [item.leader.link.href];
-  for (const cat of item.categories ?? []) {
-    if (cat.mainLink) hrefs.push(cat.mainLink.href);
-    for (const link of cat.links) hrefs.push(link.href);
+function collectChildHrefs(section: NavigationSection): string[] {
+  const hrefs: string[] = [section.leader.link.href];
+  for (const item of section.primaryItems) {
+    hrefs.push(item.href);
+    for (const link of item.links) hrefs.push(link.href);
   }
   return hrefs;
 }
@@ -72,58 +77,36 @@ export function GovernmentHeader() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const navigationItems: MainNavigationProps.Item[] = primaryNavigation.map((item) => {
-    const childHrefs = collectChildHrefs(item);
+  const navigationItems: MainNavigationProps.Item[] = primaryNavigation.map((section) => {
+    const childHrefs = collectChildHrefs(section);
     const isActive =
-      isNavItemActive(item.href, pathname) ||
+      isNavItemActive(section.href, pathname) ||
       childHrefs.some((href) => isNavItemActive(href, pathname));
 
-    const common = {
-      isActive,
-      text: tPrimaryNav(item.labelKey),
-    };
-
-    if (item.type === "link") {
-      return { ...common, linkProps: { href: item.href } };
-    }
-
-    const categories: MegaMenuProps.Category[] = [
-      ...(item.categories ?? []).map((category): MegaMenuProps.Category => {
-        // When a category is headed by its main destination (the theme page),
-        // the heading is rendered as a link (`categoryMainLink`) so the four
-        // main entries of the panel are directly reachable. Otherwise the
-        // heading is plain text (`categoryMainText`) introducing the links
-        // beneath it.
-        const links = category.links.map((link) => ({
+    // The four themes of the section are the pillars of its panel: each one is
+    // headed by its title (plain text, not navigable) and followed by its four
+    // links, so the destinations are immediately visible and reachable.
+    const categories: MegaMenuProps.Category[] = section.primaryItems.map(
+      (item): MegaMenuProps.Category => ({
+        categoryMainText: tNavPanel(item.labelKey),
+        links: item.links.map((link) => ({
           text: tNavPanel(link.labelKey),
           linkProps: { href: link.href },
           isActive: isNavItemActive(link.href, pathname),
-        }));
-
-        return category.mainLink
-          ? {
-              categoryMainLink: {
-                text: tNavPanel(category.mainLink.labelKey),
-                linkProps: { href: category.mainLink.href },
-              },
-              links,
-            }
-          : {
-              categoryMainText: tNavPanel(category.titleKey),
-              links,
-            };
-      }),
-    ];
+        })),
+      })
+    );
 
     return {
-      ...common,
+      isActive,
+      text: tPrimaryNav(section.labelKey),
       megaMenu: {
         leader: {
-          title: tNavPanel(item.leader.titleKey),
-          paragraph: tNavPanel(item.leader.paragraphKey),
+          title: tNavPanel(section.leader.titleKey),
+          paragraph: tNavPanel(section.leader.paragraphKey),
           link: {
-            text: tNavPanel(item.leader.link.labelKey),
-            linkProps: { href: item.leader.link.href },
+            text: tNavPanel(section.leader.link.labelKey),
+            linkProps: { href: section.leader.link.href },
           },
         },
         categories,

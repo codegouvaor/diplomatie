@@ -54,10 +54,18 @@
       "lead": "Une vue synthétique du réseau et des relations internationales de la République d'Astoria.",
       "note": "Données de démonstration, en attente de la publication des données officielles.",
       "items": {
-        "relations": { "label": "Relations diplomatiques" },
-        "missions": { "label": "Missions diplomatiques" },
-        "accords": { "label": "Accords internationaux" },
-        "organisations": { "label": "Organisations internationales" }
+        "relations": {
+          "label": "Relations diplomatiques"
+        },
+        "missions": {
+          "label": "Missions diplomatiques"
+        },
+        "accords": {
+          "label": "Accords internationaux"
+        },
+        "organisations": {
+          "label": "Organisations internationales"
+        }
       }
     },
     "world": {
@@ -83,14 +91,30 @@
       "lead": "Les relations internationales marquantes de la République d'Astoria, à suivre de près.",
       "allLink": "Voir toutes les relations",
       "items": {
-        "france": { "tag": "Partenaire stratégique" },
-        "japon": { "tag": "Coopération renforcée" },
-        "unionEuropeenne": { "tag": "Partenaire institutionnel" },
-        "nationsUnies": { "tag": "Membre" },
-        "allemagne": { "tag": "Partenaire stratégique" },
-        "chine": { "tag": "Partenaire stratégique" },
-        "bresil": { "tag": "Relations établies" },
-        "afriqueDuSud": { "tag": "Relations établies" }
+        "france": {
+          "tag": "Partenaire stratégique"
+        },
+        "japon": {
+          "tag": "Coopération renforcée"
+        },
+        "unionEuropeenne": {
+          "tag": "Partenaire institutionnel"
+        },
+        "nationsUnies": {
+          "tag": "Membre"
+        },
+        "allemagne": {
+          "tag": "Partenaire stratégique"
+        },
+        "chine": {
+          "tag": "Partenaire stratégique"
+        },
+        "bresil": {
+          "tag": "Relations établies"
+        },
+        "afriqueDuSud": {
+          "tag": "Relations établies"
+        }
       }
     },
     "activity": {
@@ -132,10 +156,18 @@
         "signed": "Signé"
       },
       "items": {
-        "japon": { "title": "Accord de libre-échange avec le Japon" },
-        "france": { "title": "Convention de coopération scientifique avec la France" },
-        "unionEuropeenne": { "title": "Partenariat stratégique avec l'Union européenne" },
-        "climat": { "title": "Convention multilatérale sur le climat" }
+        "japon": {
+          "title": "Accord de libre-échange avec le Japon"
+        },
+        "france": {
+          "title": "Convention de coopération scientifique avec la France"
+        },
+        "unionEuropeenne": {
+          "title": "Partenariat stratégique avec l'Union européenne"
+        },
+        "climat": {
+          "title": "Convention multilatérale sur le climat"
+        }
       }
     },
     "positions": {
@@ -181,9 +213,15 @@
       "lead": "Le réseau diplomatique et consulaire de la République d'Astoria, au service des citoyens et de la politique étrangère.",
       "exploreLink": "Explorer le réseau diplomatique",
       "items": {
-        "ambassades": { "label": "Ambassades" },
-        "consulats": { "label": "Consulats" },
-        "missions": { "label": "Missions permanentes" }
+        "ambassades": {
+          "label": "Ambassades"
+        },
+        "consulats": {
+          "label": "Consulats"
+        },
+        "missions": {
+          "label": "Missions permanentes"
+        }
       }
     },
     "services": {
@@ -254,6 +292,7 @@
     }
   },
   "nav": {
+    "ariaLabel": "Navigation principale",
     "primary": {
       "relationsExterieures": "Relations extérieures",
       "paysTerritoires": "Pays & territoires",
@@ -263,96 +302,157 @@
       "leMinistere": "Le Ministère"
     },
     "panel": {
+      "secondaryLabel": "Aussi dans cette rubrique",
       "relationsTitle": "Relations extérieures",
       "relationsText": "Comprendre les relations de la République d'Astoria avec les États et organisations du monde.",
       "relationsAllLink": "Voir toutes les relations extérieures",
       "relationsBilaterales": "Relations bilatérales",
-      "relationsBilateralesEtatsPartenaires": "États partenaires",
-      "relationsBilateralesNiveauRelations": "Niveau des relations",
       "relationsRegionales": "Relations régionales",
-      "relationsRegionalesZones": "Zones géographiques",
-      "relationsRegionalesInitiatives": "Initiatives régionales",
       "relationsOrganisationsInternationales": "Organisations internationales",
-      "relationsOrganisationsMondiales": "Organisations mondiales",
-      "relationsOrganisationsParticipation": "Participation d'Astoria",
       "relationsPartenariatsStrategiques": "Partenariats stratégiques",
-      "relationsPartenariatsPartenairesPrivilegies": "Partenaires privilégiés",
-      "relationsPartenariatsCooperationsSectorielles": "Coopérations sectorielles",
+      "relationsCooperationDiplomatique": "Coopération diplomatique",
+      "relationsMultilaterales": "Relations multilatérales",
       "paysTitle": "Pays & territoires",
       "paysText": "Explorer le monde et consulter les fiches diplomatiques de chaque État et territoire.",
       "paysAllLink": "Voir tous les pays",
       "paysTousLesPays": "Tous les pays",
-      "paysRepertoire": "Répertoire des pays",
-      "paysParRegion": "Recherche par région",
       "paysFiches": "Fiches pays",
-      "paysFichesRelationsBilaterales": "Relations bilatérales",
-      "paysFichesAccords": "Accords et traités",
-      "paysRepresentationsDiplomatiques": "Représentations diplomatiques",
-      "paysRepresentationsAmbassades": "Ambassades",
-      "paysRepresentationsConsulats": "Consulats",
       "paysRelationsAvecAstoria": "Relations avec Astoria",
-      "paysRelationsNiveaux": "Niveaux de relation",
-      "paysRelationsNouveautes": "Nouveautés diplomatiques",
+      "paysRepresentationsDiplomatiques": "Représentations diplomatiques",
+      "paysAmbassadesConsulats": "Ambassades & consulats",
+      "paysParRegion": "Informations par région",
       "accordsTitle": "Accords & engagements",
       "accordsText": "Consulter le registre public des traités et engagements internationaux d'Astoria.",
       "accordsAllLink": "Voir tous les accords",
       "accordsTraitesInternationaux": "Traités internationaux",
-      "accordsTraitesMultilateraux": "Traités multilatéraux",
-      "accordsTraitesRatifications": "Adhésions et ratifications",
       "accordsBilateraux": "Accords bilatéraux",
-      "accordsBilaterauxParPays": "Accords par pays",
-      "accordsBilaterauxEnVigueur": "Accords en vigueur",
-      "accordsConventions": "Conventions",
-      "accordsConventionsMultilaterales": "Conventions multilatérales",
-      "accordsConventionsCooperation": "Conventions de coopération",
+      "accordsConventions": "Conventions internationales",
       "accordsEngagementsInternationaux": "Engagements internationaux",
-      "accordsEngagementsMultilateraux": "Engagements multilatéraux",
-      "accordsEngagementsSuivi": "Suivi des engagements",
+      "accordsEnVigueur": "Accords en vigueur",
+      "accordsEnNegociation": "Accords en négociation",
       "politiqueTitle": "Politique étrangère",
       "politiqueText": "Découvrir la doctrine, les priorités et les positions officielles de la République d'Astoria.",
       "politiqueAllLink": "Voir toute la politique étrangère",
       "politiquePrioritesDiplomatiques": "Priorités diplomatiques",
-      "politiquePrioritesAxes": "Axes de la diplomatie",
-      "politiquePrioritesFeuilleDeRoute": "Feuille de route",
       "politiquePositionsOfficielles": "Positions officielles",
-      "politiquePositionsDeclarations": "Déclarations de position",
-      "politiquePositionsPrisesDePosition": "Prises de position",
       "politiqueCooperationInternationale": "Coopération internationale",
-      "politiqueCooperationDeveloppement": "Coopération au développement",
-      "politiqueCooperationHumanitaire": "Aide humanitaire",
       "politiqueDiplomatieEconomique": "Diplomatie économique",
-      "politiqueEconomiqueInvestissements": "Attractivité et investissements",
-      "politiqueEconomiqueEntreprises": "Soutien aux entreprises",
+      "politiquePaixSecurite": "Paix & sécurité internationales",
+      "politiqueClimatEnvironnement": "Environnement & climat",
+      "politiqueNumeriqueTechnologies": "Numérique & technologies",
+      "politiqueDroitsHumains": "Droits humains",
       "activiteTitle": "Activité diplomatique",
       "activiteText": "Suivre l'activité diplomatique contemporaine et son évolution dans le temps.",
       "activiteAllLink": "Voir toute l'activité diplomatique",
       "activiteActualites": "Actualités",
-      "activiteActualitesCommuniques": "Communiqués de presse",
-      "activiteActualitesCalendrier": "Calendrier diplomatique",
       "activiteVisitesOfficielles": "Visites officielles",
-      "activiteVisitesEtranger": "Visites à l'étranger",
-      "activiteVisitesEnAstoria": "Visites en Astoria",
       "activiteRencontresDiplomatiques": "Rencontres diplomatiques",
-      "activiteRencontresBilaterales": "Rencontres bilatérales",
-      "activiteRencontresMultilaterales": "Réunions multilatérales",
       "activiteDeclarations": "Déclarations",
-      "activiteDeclarationsMinistre": "Déclarations du Ministre",
-      "activiteDeclarationsConjointes": "Déclarations conjointes",
+      "activiteActualitesCommuniques": "Communiqués",
+      "activiteDiscours": "Discours",
+      "activiteAgendaDiplomatique": "Agenda diplomatique",
       "ministereTitle": "Le Ministère",
       "ministereText": "Découvrir l'institution, son organisation et son réseau diplomatique.",
       "ministereAllLink": "Voir le Ministère",
       "ministereMinistreCabinet": "Ministre & cabinet",
+      "ministereOrganisation": "Organisation",
+      "ministereAmbassadesConsulats": "Ambassades & consulats",
+      "ministereMissionsPermanentes": "Missions permanentes",
+      "ministereCarrieresRecrutement": "Carrières & recrutement",
+      "ministereBudgetTransparence": "Budget & transparence",
+      "ministerePublications": "Publications",
+      "ministereContact": "Contact",
+      "relationsBilateralesEtatsPartenaires": "États partenaires",
+      "relationsBilateralesNiveauRelations": "Niveau des relations",
+      "relationsRegionalesZones": "Zones géographiques",
+      "relationsRegionalesInitiatives": "Initiatives régionales",
+      "relationsOrganisationsMondiales": "Organisations mondiales",
+      "relationsOrganisationsParticipation": "Participation d'Astoria",
+      "relationsPartenariatsPartenairesPrivilegies": "Partenaires privilégiés",
+      "relationsPartenariatsCooperationsSectorielles": "Coopérations sectorielles",
+      "paysRepertoire": "Répertoire des pays",
+      "paysFichesRelationsBilaterales": "Relations bilatérales",
+      "paysFichesAccords": "Accords et traités",
+      "paysRepresentationsAmbassades": "Ambassades",
+      "paysRepresentationsConsulats": "Consulats",
+      "paysRelationsNiveaux": "Niveaux de relation",
+      "paysRelationsNouveautes": "Nouveautés diplomatiques",
+      "accordsTraitesMultilateraux": "Traités multilatéraux",
+      "accordsTraitesRatifications": "Adhésions et ratifications",
+      "accordsBilaterauxParPays": "Accords par pays",
+      "accordsBilaterauxEnVigueur": "Accords en vigueur",
+      "accordsConventionsMultilaterales": "Conventions multilatérales",
+      "accordsConventionsCooperation": "Conventions de coopération",
+      "accordsEngagementsMultilateraux": "Engagements multilatéraux",
+      "accordsEngagementsSuivi": "Suivi des engagements",
+      "politiquePrioritesAxes": "Axes de la diplomatie",
+      "politiquePrioritesFeuilleDeRoute": "Feuille de route",
+      "politiquePositionsDeclarations": "Déclarations de position",
+      "politiquePositionsPrisesDePosition": "Prises de position",
+      "politiqueCooperationDeveloppement": "Coopération au développement",
+      "politiqueCooperationHumanitaire": "Aide humanitaire",
+      "politiqueEconomiqueInvestissements": "Attractivité et investissements",
+      "politiqueEconomiqueEntreprises": "Soutien aux entreprises",
+      "activiteActualitesCalendrier": "Calendrier diplomatique",
+      "activiteVisitesEtranger": "Visites à l'étranger",
+      "activiteVisitesEnAstoria": "Visites en Astoria",
+      "activiteRencontresBilaterales": "Rencontres bilatérales",
+      "activiteRencontresMultilaterales": "Réunions multilatérales",
+      "activiteDeclarationsMinistre": "Déclarations du Ministre",
+      "activiteDeclarationsConjointes": "Déclarations conjointes",
       "ministereMinistre": "Le Ministre",
       "ministereMinistreAgenda": "Agenda du Ministre",
-      "ministereOrganisation": "Organisation",
       "ministereOrganisationDirections": "Directions",
       "ministereOrganisationMissions": "Missions et valeurs",
-      "ministereAmbassadesConsulats": "Ambassades & consulats",
       "ministereReseauDiplomatique": "Réseau diplomatique",
       "ministereAmbassades": "Ambassades",
-      "ministereCarrieresRecrutement": "Carrières & recrutement",
       "ministereCarrieresConcours": "Concours et recrutement",
-      "ministereCarrieresMetiers": "Métiers de la diplomatie"
+      "ministereCarrieresMetiers": "Métiers de la diplomatie",
+      "relationsBilateralesChronologie": "Chronologie des relations",
+      "relationsRegionalesCadres": "Cadres régionaux",
+      "paysCartes": "Cartes du monde",
+      "paysFichesRepresentations": "Représentations dans le pays",
+      "paysRepresentationsMissionsPermanentes": "Missions permanentes",
+      "paysRelationsChronologie": "Chronologie des relations",
+      "accordsTraitesTextes": "Textes de référence",
+      "accordsConventionsSectorielles": "Conventions sectorielles",
+      "politiquePrioritesRapports": "Rapports annuels",
+      "politiquePositionsDocuments": "Documents de référence",
+      "politiqueCooperationApd": "Aide publique au développement",
+      "politiqueEconomiqueAmbassadeurs": "Ambassadeurs économiques",
+      "activiteActualitesRevuePresse": "Revue de presse",
+      "activiteVisitesArchives": "Archives des visites",
+      "activiteRencontresConseils": "Conseils & comités",
+      "ministereMinistreEquipe": "Équipe ministérielle",
+      "ministereOrganisationInstances": "Instances & conseils",
+      "ministereConsulats": "Consulats",
+      "ministereMissionsRepresentations": "Représentations permanentes",
+      "ministereMissionsDelegations": "Délégations diplomatiques",
+      "ministereMissionsParticipation": "Participation aux organisations",
+      "relationsBilateralesAccords": "Accords bilatéraux",
+      "relationsRegionalesDialogue": "Dialogue politique régional",
+      "relationsOrganisationsRegionales": "Organisations régionales",
+      "relationsPartenariatsDialogue": "Dialogue stratégique",
+      "paysTerritoiresNonSouverains": "Territoires non souverains",
+      "paysFichesChiffresCles": "Chiffres clés",
+      "paysRepresentationsReseauConsulaire": "Réseau consulaire",
+      "paysRelationsReciprocite": "Réciprocité des relations",
+      "accordsTraitesListe": "Liste complète des traités",
+      "accordsBilaterauxSignes": "Accords récemment signés",
+      "accordsConventionsEnVigueur": "Conventions en vigueur",
+      "accordsEngagementsObjectifs": "Objectifs de développement",
+      "politiquePrioritesStrategie2030": "Stratégie 2030",
+      "politiquePositionsThemes": "Positions par thème",
+      "politiqueCooperationPartenaires": "Partenaires internationaux",
+      "politiqueEconomiqueFilieres": "Filières d'excellence",
+      "activiteActualitesBreves": "Brèves",
+      "activiteVisitesAVenir": "Visites à venir",
+      "activiteRencontresSommets": "Sommets internationaux",
+      "activiteDeclarationsPorteParole": "Déclarations des porte-parole",
+      "ministereMinistreDiscours": "Discours du Ministre",
+      "ministereOrganisationOrganigramme": "Organigramme",
+      "ministereCirconscriptionsConsulaires": "Circonscriptions consulaires",
+      "ministereMissionsUE": "Missions auprès de l'Union européenne"
     }
   },
   "footer": {
