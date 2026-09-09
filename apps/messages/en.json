@@ -291,6 +291,108 @@
       "nations-unies": "United Nations"
     }
   },
+  "etatsPartenaires": {
+    "lead": "Discover the States with which the Republic of Astoria maintains bilateral relations and the key partnerships that shape its foreign policy.",
+    "metaTitle": "Partner states | Bilateral relations | Diplomacy of the Republic of Astoria",
+    "metaDescription": "Discover the partner states of the Republic of Astoria, their diplomatic relations, their representations and their main bilateral partnerships.",
+    "stats": {
+      "statesLabel": "Partner states",
+      "relationsLabel": "Established diplomatic relations",
+      "strategicLabel": "Strategic partnerships",
+      "representationsLabel": "Diplomatic representations",
+      "note": "Demonstration data, awaiting the publication of the official data."
+    },
+    "search": {
+      "label": "Search for a partner state",
+      "placeholder": "Search for a partner state",
+      "hint": "Search by country name, code or capital.",
+      "submit": "Search",
+      "results": "{count, plural, =0 {No partner state} one {# partner state} other {# partner states}}",
+      "noResultsTitle": "No state matches your search",
+      "noResultsText": "Adjust your search or filter criteria to broaden the results.",
+      "reset": "Reset filters"
+    },
+    "filters": {
+      "statusLabel": "Level of relations",
+      "regionLabel": "Region",
+      "representationLabel": "Representation",
+      "allStatuses": "All levels",
+      "allRegions": "All regions",
+      "allRepresentations": "All representations"
+    },
+    "status": {
+      "strategic": "Strategic partner",
+      "privileged": "Privileged partner",
+      "partner": "Partner",
+      "developing": "Developing relations",
+      "suspended": "Suspended relations"
+    },
+    "region": {
+      "europe": "Europe",
+      "asie": "Asia",
+      "afrique": "Africa",
+      "ameriques": "Americas",
+      "moyenOrient": "Middle East",
+      "oceanie": "Oceania"
+    },
+    "representation": {
+      "embassy": "Astorian embassy",
+      "consulate": "Astorian consulate",
+      "mission": "Diplomatic mission",
+      "none": "No representation"
+    },
+    "card": {
+      "at": "in",
+      "relationsSince": "Diplomatic relations established since {year}",
+      "agreements": "{count, plural, one {# agreement} other {# agreements}}",
+      "seeRelation": "See the relation"
+    },
+    "view": {
+      "label": "Display mode",
+      "grid": "Grid",
+      "list": "List"
+    },
+    "table": {
+      "caption": "Register of the partner states of the Republic of Astoria",
+      "state": "State",
+      "region": "Region",
+      "relation": "Relation",
+      "representation": "Representation",
+      "agreements": "Agreements"
+    },
+    "pagination": {
+      "label": "Pagination",
+      "page": "Page {current} of {total}",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "registry": {
+      "kicker": "The register",
+      "title": "Register of partner states",
+      "lead": "Browse all the States with which Astoria maintains relations, and filter by level of relations, region or representation."
+    },
+    "strategic": {
+      "kicker": "Privileged relations",
+      "title": "Strategic partnerships",
+      "lead": "The most structuring relations of Astoria's foreign policy, built on deep cooperation and regular political dialogue.",
+      "activityLabel": "Latest activity",
+      "spotlight": {
+        "france": "Astoria's historic partner, cooperation spans politics, the economy and culture.",
+        "allemagne": "Dense political dialogue and leading economic and energy cooperation.",
+        "royaume-uni": "Partnership built on trade, defence and scientific cooperation.",
+        "etats-unis": "Transatlantic alliance, defence cooperation and technology partnership.",
+        "chine": "Strategic dialogue on trade, climate and regional stability.",
+        "japon": "Reinforced partnership: free trade, technologies and multilateral cooperation.",
+        "canada": "Deep cooperation on the Arctic, climate and cultural exchanges."
+      }
+    },
+    "citizens": {
+      "kicker": "For citizens",
+      "title": "Planning a trip abroad?",
+      "text": "Check the official information about your destination, Astoria's diplomatic representations and the consular services available.",
+      "cta": "Browse country information"
+    }
+  },
   "nav": {
     "ariaLabel": "Main navigation",
     "primary": {
